@@ -1,0 +1,16 @@
+# ZAKÁZAT SPUŠTĚNÍ PHP SOUBORŮ (ale povolit obrázky)
+<FilesMatch "\.(php|php3|php4|php5|phtml)$">
+    Deny from all
+</FilesMatch>
+
+# Pokud chceš úplně vypnout PHP engine (většinou není potřeba, stačí výše)
+# php_flag engine off
+
+# Povolit přístup ke všem ostatním souborům (obrázky, PDF atd.)
+<FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|ico|pdf)$">
+    Allow from all
+</FilesMatch>
+
+AddType image/svg+xml .svg .svgz
+
+Options -ExecCGI

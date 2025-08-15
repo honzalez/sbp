@@ -1,0 +1,48 @@
+/* ===== KLUBOVÁ PATIČKA ===== */
+.footer-pro {
+    background: transparent;
+    border-top: 0px;
+    color: #ccc;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    font-size: 1em;
+    letter-spacing: 1px;
+    margin-top: 38px;
+}
+.footer-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+.footer-logo img {
+    vertical-align: middle;
+    filter: drop-shadow(0 2px 8px #a3000044);
+}
+.footer-text {
+    font-family: 'Russo One', Arial, sans-serif;
+    font-size: 1.02em;
+    color: #ccc;
+}
+.footer-text a {
+    color: #a30000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.17s;
+}
+.footer-text a:hover {
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .footer-wrap {
+        flex-direction: column;
+        gap: 7px;
+    }
+    .footer-pro {
+        font-size: 0.99em;
+        padding: 18px 0 10px 0;
+    }
+}

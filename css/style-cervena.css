@@ -1,0 +1,550 @@
+/* =======================================================================
+   GLOBAL STYLY PRO CELÝ WEB
+   - Nastavuje pozadí, font, barvy, základní vzhled
+======================================================================= */
+body {
+  background: linear-gradient(120deg, #000 44%, #a30000 100%) !important;
+  color: #fff;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.12;
+  background: url('https://www.transparenttextures.com/patterns/noise.png');
+}
+
+/* =======================================================================
+   MENU & LOGO (header + navigation)
+   - Horní černý pruh s logem, hlavním menu a dlaždicemi sponzorů
+======================================================================= */
+.navbar-pro {
+  background: #000 !important;
+  box-shadow: 0 2px 14px #000d;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 92px;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Wrapper pro navigační prvky (menu, logo, sponzoři, uživatel) */
+.menu-pro {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  height: 92px;
+  padding-left: 8px;
+}
+
+/* Logo vlevo */
+.logo-left {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  z-index: 3;
+  background: transparent;
+}
+.logo-left img {
+  height: 90px;
+  width: auto;
+  filter: drop-shadow(0 4px 14px #a3000045);
+  background: #18181b;
+  border-radius: 50%;
+  padding: 7px;
+  box-shadow: 0 2px 16px #0007;
+  border: 3px solid #fff;
+  margin-top: 20px;
+}
+
+/* =======================================================================
+   HAMBURGER MENU PRO MOBIL
+   - Tlačítko se třemi čarami, zobrazuje se pouze na malých displejích
+   - HTML: <button id="hamburgerBtn" aria-label="Menu">&#9776;</button>
+======================================================================= */
+#hamburgerBtn {
+  display: none;  /* výchozí stav - na PC skryté */
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2em;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  align-self: center;
+  z-index: 120;
+}
+
+/* =======================================================================
+   HLAVNÍ MENU (navigace)
+   - Menu položky na jednom řádku, zvýraznění aktivní stránky
+   - HTML: <ul class="main-menu-inline"><li>...</li></ul>
+======================================================================= */
+.main-menu-inline {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 32px;
+  margin: 0 0 0 36px;
+  padding: 0;
+  height: 100%;
+  transition: all 0.2s;
+  flex-wrap: nowrap;
+}
+.main-menu-inline a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Russo One', Arial, sans-serif;
+  font-size: 1.13em;
+  padding: 10px 18px;
+  border-radius: 5px;
+  transition: background 0.16s, color 0.16s;
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
+}
+.main-menu-inline a:hover,
+.main-menu-inline a.active {
+  background: #a30000;
+  color: #fff;
+}
+
+/* =======================================================================
+   UŽIVATEL (vpravo nahoře)
+   - Avatar a jméno, po najetí rozbalovací menu (Můj účet, Admin, Odhlásit)
+   - HTML: .user-profile-menu s .user-dropdown uvnitř
+======================================================================= */
+.user-profile-menu {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+.user-avatar {
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  box-shadow: 0 2px 7px #a3000040;
+  background: #232323;
+  margin-right: 7px;
+  border: 1.5px solid #a30000;
+  transition: filter 0.15s;
+}
+.user-profile-name {
+  font-family: 'Russo One', Arial, sans-serif;
+  color: #fff;
+  font-size: 1em;
+  margin-right: 7px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  transition: color 0.16s;
+}
+.user-profile-menu:hover .user-profile-name {
+  color: #a30000;
+}
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  min-width: 130px;
+  background: #232323;
+  border-radius: 9px;
+  box-shadow: 0 5px 18px #0007;
+  padding: 8px 14px;
+  text-align: right;
+  z-index: 100;
+}
+.user-profile-menu:hover .user-dropdown,
+.user-profile-menu.open .user-dropdown {
+  display: block;
+}
+.user-dropdown-link {
+  color: #fff;
+  font-family: 'Russo One', Arial, sans-serif;
+  text-decoration: none;
+  font-size: 1em;
+  display: block;
+  transition: color 0.15s;
+  padding: 4px 0;
+}
+.user-dropdown-link:hover {
+  color: #a30000;
+}
+
+/* =======================================================================
+   SPONZOŘI V HORNÍM MENU (dlaždice)
+   - Tři malé "reklamní" loga vpravo nahoře
+======================================================================= */
+.menu-sponsor-tiles-and-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-left: 18px;
+  height: 76px;
+  position: relative;
+}
+.menu-sponsor-tiles {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 0;
+}
+.menu-sponsor-tile {
+  width: 102px;
+  height: 52px;
+  border-radius: 10px;
+  background: #18181b;
+  box-shadow: 0 2px 8px #0006, 0 0 0 2px #a3000030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: box-shadow 0.17s, transform 0.15s;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  position: relative;
+  margin-top: 18px;
+}
+.menu-sponsor-tile img {
+  max-width: 96px;
+  max-height: 48px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: brightness(1.02) contrast(1.08);
+  transition: filter 0.12s;
+}
+.menu-sponsor-tile:hover {
+  box-shadow: 0 4px 18px #a300008a, 0 0 0 2px #fff8;
+  border-color: #a30000;
+  transform: translateY(-2px) scale(1.04);
+}
+.menu-sponsor-tile:hover img {
+  filter: brightness(1.12) contrast(1.15) saturate(1.07);
+}
+.menu-sponsor-label {
+  margin-top: 3px;
+  font-family: 'Russo One', Arial, sans-serif;
+  font-size: 0.92em;
+  color: #fff;
+  opacity: 0.82;
+  letter-spacing: 1px;
+  text-align: right;
+  text-transform: lowercase;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* =======================================================================
+   HERO / HLAVNÍ SEKCE (logo, slogan)
+======================================================================= */
+.hero-simple {
+  background: transparent;
+  text-align: center;
+  padding: 40px 0 16px 0;
+  margin-bottom: 0;
+}
+.hero-napis {
+  display: block;
+  margin: 0 auto 12px auto;
+  max-width: 350px;
+  width: 88vw;
+}
+.hero-tagline {
+  color: #ccc;
+  font-size: 1.18em;
+  margin: 0 auto;
+  letter-spacing: 0.3px;
+}
+
+/* =======================================================================
+   REKLAMNÍ BANNERY / SPONZOŘI (větší bannery pod hlavou sekcí)
+======================================================================= */
+.sponsor-section {
+  background: none;
+  padding: 60px 0 50px 0;
+  text-align: center;
+}
+.sponsor-section h2 {
+  color: #fff;
+  font-family: 'Russo One', Arial, sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 38px;
+  letter-spacing: 1px;
+}
+.sponsor-cards {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.sponsor-card {
+  background: rgba(25,25,25,0.88);
+  border-radius: 18px;
+  box-shadow: 0 4px 20px #000a, 0 0 0 2px #a3000055;
+  padding: 32px 36px 22px 36px;
+  min-width: 200px;
+  max-width: 280px;
+  text-align: center;
+  transition: transform 0.19s, box-shadow 0.18s;
+  position: relative;
+  margin: 0 5px;
+}
+.sponsor-card:hover {
+  transform: translateY(-7px) scale(1.03);
+  box-shadow: 0 10px 36px #a30000bb, 0 0 0 2.5px #fff9;
+}
+.sponsor-image {
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 92px;
+}
+.sponsor-image img {
+  max-height: 80px;
+  width: auto;
+  margin: 0 auto;
+  border-radius: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  filter: none;
+  display: block;
+}
+
+/* =======================================================================
+   OBSAH, KARTY, NOVINKY, TABULKY (zápasy, hráči apod.)
+======================================================================= */
+.main-wrap {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 36px 8px 0 8px;
+}
+.cards-row {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.info-card {
+  background: #19191aee;
+  border-left: 5px solid #a30000;
+  border-radius: 12px;
+  padding: 20px 28px;
+  min-width: 180px;
+  text-align: center;
+  box-shadow: 0 2px 10px #0006;
+}
+.info-title {
+  font-family: 'Russo One', Arial, sans-serif;
+  color: #a30000;
+  font-size: 1.07em;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+.icon-lebkoun {
+  height: 22px;
+  width: auto;
+  vertical-align: middle;
+}
+.info-value {
+  font-size: 1.3em;
+  font-family: 'Russo One', Arial, sans-serif;
+  color: #fff;
+}
+.jersey-num {
+  font-family: 'Russo One', Arial, sans-serif;
+  font-size: 1.12em;
+  background: #131313;
+  border-radius: 6px;
+  padding: 2px 10px;
+  margin: 0 4px;
+  color: #fff;
+  display: inline-block;
+  letter-spacing: 1.2px;
+}
+.matches-table { margin-bottom: 42px; }
+h2 {
+  font-family: 'Russo One', Arial, sans-serif;
+  color: #a30000;
+  font-size: 1.2em;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #19191aee;
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px #0007;
+}
+th, td {
+  padding: 10px 14px;
+  text-align: center;
+  font-family: 'Russo One', Arial, sans-serif;
+  font-size: 1em;
+}
+th {
+  background: #a30000;
+  color: #fff;
+  font-weight: bold;
+}
+tr:nth-child(even) td {
+  background: #232325dd;
+}
+.note { color: #ad3030; font-style: italic;}
+.news-section { margin-top: 40px; }
+.news-list {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.news-card {
+  background: #18181bee;
+  border-left: 5px solid #a30000;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px #0008;
+  padding: 16px 22px 12px 22px;
+  flex: 1 1 300px;
+  min-width: 240px;
+  max-width: 400px;
+  margin-bottom: 14px;
+}
+.news-card h3 {
+  font-family: 'Russo One', Arial, sans-serif;
+  color: #fff;
+  font-size: 1.07em;
+  margin-top: 0; margin-bottom: 7px;
+  font-weight: normal;
+}
+.news-card p { color: #eee; margin-bottom: 7px; }
+.news-date {
+  display: block;
+  color: #a30000;
+  font-size: 0.95em;
+  font-family: 'Russo One', Arial, sans-serif;
+  margin-top: 4px;
+}
+.news-sparta h3,
+.news-sparta p,
+.note { color: #ad3030 !important; }
+
+/* =======================================================================
+   FOOTER (patička)
+======================================================================= */
+.footer-pro {
+  background: transparent;
+  border-top: 0px;
+  color: #ccc;
+  padding: 10px 0 10px 0;
+  text-align: center;
+  font-size: 1em;
+  letter-spacing: 1px;
+  margin-top: 38px;
+}
+.footer-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.footer-logo img {
+  vertical-align: middle;
+  filter: drop-shadow(0 2px 8px #a3000044);
+}
+.footer-text {
+  font-family: 'Russo One', Arial, sans-serif;
+  font-size: 1.02em;
+  color: #ccc;
+}
+.footer-text a {
+  color: #a30000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.17s;
+}
+.footer-text a:hover {
+  color: #fff;
+}
+
+/* =======================================================================
+   RESPONSIVITA - Tablety a mobily
+   - Menu se zmenší a na mobilu je hamburger!
+======================================================================= */
+@media (max-width: 900px) {
+  .navbar-pro, .menu-pro { height: auto; }
+  .logo-left img { height: 60px; margin-top: 10px; }
+  .main-menu-inline { gap: 12px; margin-left: 20px;}
+  .sponsor-cards { gap: 22px; }
+  .sponsor-card { padding: 18px 8px 18px 8px;}
+  .menu-sponsor-tiles { height: 45px; gap: 6px; margin-right: 7px; }
+  .menu-sponsor-tile { width: 38px; height: 38px; border-radius: 8px; }
+  .menu-sponsor-tile img { max-width: 27px; max-height: 27px;}
+  .user-profile-menu { margin-left: 7px; }
+  .user-profile-name { font-size: 0.97em; }
+}
+
+/* --- MOBIL: menu se skryje a je dostupné přes hamburger --- */
+@media (max-width: 650px) {
+  #hamburgerBtn {
+    display: block !important;
+    position: absolute;
+    left: 110px;
+    top: 24px;
+    z-index: 111;
+    background: none;
+  }
+  .main-menu-inline {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background: #18181b;
+    position: absolute;
+    left: 0;
+    top: 95px;
+    width: 100vw;
+    padding: 0 0 16px 0;
+    box-shadow: 0 12px 24px #000b;
+  }
+  .main-menu-inline.show { display: flex !important; }
+  .logo-left img { height: 38px; margin-top: 4px;}
+  .main-menu-inline a { font-size: 1.08em; padding: 14px 12px; border-radius: 0; }
+  .menu-sponsor-tiles { flex-wrap: wrap; gap: 2px; height: auto; }
+  .menu-sponsor-tile { width: 25vw; min-width: 60px; max-width: 80px; height: 28px; }
+  .menu-sponsor-tile img { max-width: 50px; max-height: 24px; }
+  .menu-sponsor-label { font-size: 0.83em; }
+  .sponsor-section { padding: 22px 0 18px 0;}
+  .sponsor-cards { flex-direction: column; gap: 12px; }
+  .sponsor-card { min-width: 180px; max-width: 98vw; padding: 10px 3vw;}
+  .main-wrap { padding: 12px 2vw 0 2vw; }
+  .cards-row { gap: 7px; flex-wrap: wrap; }
+  th, td { padding: 6px 3px; font-size: 0.96em;}
+  .footer-wrap { flex-direction: column; gap: 7px;}
+  .footer-pro { font-size: 0.98em; padding: 12px 0 7px 0;}
+}

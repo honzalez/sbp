@@ -1,0 +1,71 @@
+/* ===== RESPONSIVITA ===== */
+@media (max-width: 900px) {
+    .navbar-pro, .menu-pro { height: auto; }
+    .logo-left img { height: 60px; margin-top: 10px; }
+    .main-menu-inline { gap: 12px; margin-left: 20px;}
+    .sponsor-cards { gap: 22px; }
+    .sponsor-card { padding: 18px 8px 18px 8px;}
+    .menu-sponsor-tiles {
+        height: 45px;
+        gap: 6px;
+        margin-right: 7px;
+    }
+    .menu-sponsor-tile {
+        width: 38px; height: 38px; border-radius: 8px;
+    }
+    .menu-sponsor-tile img { max-width: 27px; max-height: 27px;}
+}
+@media (max-width: 650px) {
+    .menu-pro { flex-direction: column; align-items: flex-start; padding-left: 0;}
+    .logo-left img { height: 42px; margin-top: 6px;}
+    .main-menu-inline { flex-wrap: wrap; gap: 4px; margin-left: 8px;}
+    .sponsor-cards { flex-direction: column; gap: 16px; }
+    .sponsor-section { padding: 34px 0 24px 0;}
+    .hero-napis { max-width: 220px;}
+    .news-list { flex-direction: column; gap: 6px;}
+    th, td { padding: 7px 5px; font-size: 0.98em;}
+}
+
+
+/* Pro tablety a menší notebooky */
+@media (max-width: 900px) {
+    .navbar-pro, .menu-pro { height: auto; }
+    .logo-left img { height: 60px; margin-top: 10px; }
+    .main-menu-inline { gap: 8px; margin-left: 10px;}
+    .sponsor-cards { gap: 18px; flex-wrap: wrap;}
+    .sponsor-card { padding: 18px 8px 18px 8px;}
+    .menu-sponsor-tiles { height: 40px; gap: 4px; margin-right: 6px; }
+    .menu-sponsor-tile { width: 34px; height: 34px; border-radius: 7px; }
+    .menu-sponsor-tile img { max-width: 22px; max-height: 22px;}
+    .user-profile-menu { margin-left: 7px; }
+}
+
+/* Pro mobily */
+@media (max-width: 650px) {
+    .menu-pro { flex-direction: column; align-items: flex-start; padding-left: 0;}
+    .logo-left img { height: 38px; margin-top: 4px;}
+    .main-menu-inline { flex-wrap: wrap; gap: 2px; margin-left: 0; }
+    .main-menu-inline a { font-size: 0.98em; padding: 7px 8px; }
+    .menu-sponsor-tiles { flex-wrap: wrap; gap: 2px; height: auto; }
+    .menu-sponsor-tile { width: 25vw; min-width: 60px; max-width: 80px; height: 28px; }
+    .menu-sponsor-tile img { max-width: 50px; max-height: 24px; }
+    .menu-sponsor-label { font-size: 0.83em; }
+    .sponsor-section { padding: 22px 0 18px 0;}
+    .sponsor-cards { flex-direction: column; gap: 12px; }
+    .sponsor-card { min-width: 180px; max-width: 98vw; padding: 10px 3vw;}
+    .main-wrap { padding: 12px 2vw 0 2vw; }
+    .cards-row { gap: 7px; flex-wrap: wrap; }
+    th, td { padding: 6px 3px; font-size: 0.96em;}
+    .footer-wrap { flex-direction: column; gap: 7px;}
+    .footer-pro { font-size: 0.98em; padding: 12px 0 7px 0;}
+}
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  font-size: 0.95em;
+}
+.main-menu-inline {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}

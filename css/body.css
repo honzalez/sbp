@@ -1,0 +1,37 @@
+/* CSS Document */                                                                                                                          /* === GLOBAL BODY GRADIENT (BLACK TO RED, LEFT TO RIGHT) === */
+body {
+  background: linear-gradient(120deg, #000 44%, #a30000 100%) !important;
+  color: #fff;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.12;
+  background: url('https://www.transparenttextures.com/patterns/noise.png');
+}
+
+/* ===== HERO SEKCIA ===== */
+.hero-simple {
+    background: transparent;
+    text-align: center;
+    padding: 40px 0 16px 0;
+    margin-bottom: 0;
+}
+.hero-napis {
+    display: block;
+    margin: 0 auto 12px auto;
+    max-width: 350px;
+    width: 88vw;
+}
+.hero-tagline {
+    color: #ccc;
+    font-size: 1.18em;
+    margin: 0 auto;
+    letter-spacing: 0.3px;
+}
