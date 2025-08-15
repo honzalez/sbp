@@ -10,3 +10,5 @@ Vedený podle **Keep a Changelog** a **SemVer**.
 
 ## [Nezveřejněné]
 - (zatím nic)
+
+README napleno 202508160130
