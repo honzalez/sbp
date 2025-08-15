@@ -1,0 +1,35 @@
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# PHP / Composer
+/vendor/
+composer.phar
+
+# Logs / Cache / Temp
+*.log
+*.cache
+.cache/
+cache/
+tmp/
+temp/
+storage/
+# PHPUnit caches
+.phpunit.result.cache
+phpunit.cache/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Build tools (pokud používáš frontend)
+node_modules/
+dist/
+build/
+coverage/
+
+# Uploads (pokud máš veřejné nahrávky)
+public/uploads/
