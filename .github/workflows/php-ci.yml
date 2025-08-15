@@ -1,0 +1,38 @@
+name: php-ci
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+
+jobs:
+  lint-and-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: PHP syntax check
+        run: |
+          set -e
+          if ls -1 **/*.php >/dev/null 2>&1; then
+            find . -name "*.php" -print0 | xargs -0 -n1 -P4 php -l
+          else
+            echo "No PHP files found."
+          fi
+
+      - name: Install Composer deps (if composer.json exists)
+        if: ${{ hashFiles('**/composer.json') != '' }}
+        run: |
+          composer install --no-interaction --no-progress
+
+      - name: Run tests (PHPUnit if present)
+        if: ${{ hashFiles('**/phpunit.xml') != '' || hashFiles('**/phpunit.xml.dist') != '' }}
+        run: |
+          vendor/bin/phpunit --no-coverage || ./vendor/bin/phpunit --no-coverage
