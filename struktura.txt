@@ -1,0 +1,100 @@
+.
+  |admin
+  |  |user_add.php
+  |  |match_edit.php
+  |  |requests.php
+  |  |match_add.php
+  |  |settings.php
+  |  |lineup_edit.php
+  |  |match_list.php
+  |  |user_list.php
+  |  |match_delete.php
+  |  |player_list.php
+  |  |user_delete.php
+  |  |news.php
+  |  |lineup_save.php
+  |  |admin_menu.php
+  |  |media_upload.php
+  |  |approve_role.php
+  |  |index.php
+  |  |roster.php
+  |  |sponsors.php
+  |  |user_edit.php
+  |  |player_delete.php
+  |  |player_edit.php
+  |  |player_add.php
+  |.gitattributes
+  |README.md
+  |config
+  |  |uc.php
+  |  |usercreate.php
+  |  |config.php
+  |logout.php
+  |.gitignore
+  |stats.php
+  |.github
+  |  |ISSUE_TEMPLATE
+  |  |  |bug_report.yml
+  |  |  |feature_request.yml
+  |  |workflows
+  |  |  |php-ci.yml
+  |  |pull_request_template.md
+  |  |CODEOWNERS
+  |index-old.php
+  |about-old.php
+  |profile.php
+  |struktura.txt
+  |includes
+  |  |auth_check.php
+  |  |footer.php
+  |  |header.php
+  |CHANGELOG.md
+  |assets
+  |scripts
+  |login.php
+  |core
+  |js
+  |  |main.js
+  |  |main-old.js
+  |matches.php
+  |logo
+  |  |favicon.ico
+  |  |sebranka-logo-01.svg
+  |  |sebranka-lebkoun-01.svg
+  |  |sebranka-napis-01.svg
+  |uploads
+  |  |moments
+  |  |  |media_20250607_231256_2881.jpg
+  |  |  |media_20250607_231645_4110.jpg
+  |  |sponsors
+  |  |  |neatwood-logo.svg
+  |  |  |auto-papousek-kulate-logo.svg
+  |  |  |goodyear-logo.svg
+  |  |  |neatwood-logo.svg-old
+  |  |news
+  |  |htaccess
+  |  |players
+  |  |  |auto-papousek-kulate-logo.svg
+  |register.php
+  |lineup.php
+  |soupiska_match.php
+  |about.php
+  |index.php
+  |roster.php
+  |css
+  |  |modules
+  |  |style-cervena.css
+  |  |responsive.css
+  |  |menu.css
+  |  |style202505302311.css
+  |  |footer.css
+  |  |stylexx.css
+  |  |style20250531.css
+  |  |style-backup.css
+  |  |sponsors.css
+  |  |cards.css
+  |  |backup
+  |  |body.css
+  |  |style.css
+  |  |styleachjo.css
+  |api
