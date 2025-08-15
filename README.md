@@ -11,4 +11,8 @@ webová stránka amaterského hokejového klubu
 ## Lokální start (příklad)
 ```bash
 php -S 127.0.0.1:8000 -t public
+```
+
+Ověření ochrany větve a CI
+
 
