@@ -1,0 +1,14 @@
+name: Feature request
+description: Návrh nové funkce
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: popis
+    attributes: { label: Popis, description: Co má funkce umět a proč? }
+    validations: { required: true }
+  - type: textarea
+    id: prijeti
+    attributes: { label: Kritéria přijetí, description: "Given/When/Then" }
+  - type: textarea
+    id: dopad
+    attributes: { label: Dopad / Rizika }
