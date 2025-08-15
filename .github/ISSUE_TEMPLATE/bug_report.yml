@@ -1,0 +1,18 @@
+name: Bug report
+description: Nahlásit chybu
+labels: ["bug"]
+body:
+  - type: textarea
+    id: popis
+    attributes: { label: Popis, description: Co je špatně? }
+    validations: { required: true }
+  - type: textarea
+    id: kroky
+    attributes: { label: Kroky k reprodukci, description: "1. … 2. …" }
+    validations: { required: true }
+  - type: input
+    id: ocekavane
+    attributes: { label: Očekávané chování }
+  - type: input
+    id: verze
+    attributes: { label: Verze/prostředí, placeholder: "tag v1.2.3, PHP 8.2…" }
