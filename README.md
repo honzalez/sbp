@@ -6,6 +6,7 @@ webová stránka amaterského hokejového klubu
 - PHP 8.1+
 - (Volitelně) Composer, MySQL/MariaDB
 - hosting: wedos
+- test
 
 ## Lokální start (příklad)
 ```bash
