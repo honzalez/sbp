@@ -30,6 +30,7 @@
 ├── assets
 ├── config
 │   ├── config.php
+│   ├── config.php.example
 │   ├── uc.php
 │   └── usercreate.php
 ├── core
@@ -76,7 +77,6 @@
 ├── soupiska_match.php
 ├── stats.php
 ├── struktura.txt
-├── struktura_new.txt
 └── uploads
     ├── avatars
     │   ├── players

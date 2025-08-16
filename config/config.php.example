@@ -1,8 +1,8 @@
 <?php
-$host = "md414.wedos.net";
+$host = "";
 $user = "";     // Zadej své údaje
 $pass = "";
-$db   = "d301858_sbprg";
+$db   = "";
 
 $conn = new mysqli($host, $user, $pass, $db);
 $conn->set_charset("utf8mb4");
