@@ -1,35 +1,40 @@
-# OS / IDE
+# ===== PHP a systémové soubory =====
+*.log
+*.lock
+*.tmp
+*.bak
+*.swp
 .DS_Store
 Thumbs.db
-.idea/
-.vscode/
 
-# PHP / Composer
+# ===== Composer / PHP vendor =====
 /vendor/
-composer.phar
 
-# Logs / Cache / Temp
-*.log
-*.cache
-.cache/
-cache/
-tmp/
-temp/
-storage/
-# PHPUnit caches
-.phpunit.result.cache
-phpunit.cache/
+# ===== Node.js / npm (kdybys někdy použil) =====
+/node_modules/
 
-# Env
-.env
-.env.local
-.env.*.local
+# ===== Lokální konfigurace (nepatří do gitu) =====
+/config/config.php
 
-# Build tools (pokud používáš frontend)
-node_modules/
-dist/
-build/
-coverage/
+# ===== Uploads – ignoruj obsah, ale ponech strukturu (.gitkeep) =====
+/uploads/**
+!/uploads/**/
+!/uploads/**/.gitkeep
 
-# Uploads (pokud máš veřejné nahrávky)
-public/uploads/
+# ===== CSS/JS buildy nebo zálohy =====
+/css/backup/*
+!/css/backup/.gitkeep
+/css/modules/*
+!/css/modules/.gitkeep
+
+# ===== Scripts – zatím prázdné, držíme jen .gitkeep =====
+/scripts/*
+!/scripts/.gitkeep
+
+# ===== API, assets, core – ignoruj obsah, ale nech .gitkeep =====
+/api/*
+!/api/.gitkeep
+/assets/*
+!/assets/.gitkeep
+/core/*
+!/core/.gitkeep
