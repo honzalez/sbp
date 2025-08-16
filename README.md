@@ -55,28 +55,60 @@ Spusť lokální PHP server:
 
     a otevři http://localhost:8000.
 
-📂 Struktura projektu
+## 📂 Struktura projektu
 
+Projekt je rozdělen do následujících složek a souborů:
+
+```text
 .
-├── CHANGELOG.md
-├── README.md
-├── index.php
-├── about.php
-├── login.php
-├── logout.php
-├── register.php
-├── profile.php
-├── roster.php
-├── lineup.php
-├── matches.php
-├── stats.php
+├── CHANGELOG.md         # přehled změn v projektu
+├── README.md            # dokumentace projektu
+├── index.php            # hlavní stránka webu
+├── about.php            # stránka "O nás"
+├── login.php            # přihlášení uživatele
+├── logout.php           # odhlášení uživatele
+├── register.php         # registrace nového uživatele
+├── profile.php          # uživatelský profil
+├── roster.php           # soupisky hráčů
+├── lineup.php           # sestavy pro zápasy
+├── matches.php          # přehled zápasů
+├── soupiska_match.php   # detailní soupiska konkrétního zápasu
+├── stats.php            # týmové a hráčské statistiky
 │
-├── admin/             # administrace (uživatelé, hráči, zápasy, nastavení)
-├── api/               # API endpointy (budoucí rozšíření) – prázdné, .gitkeep
-├── assets/            # statické soubory (obrázky, fonty, atd.) – prázdné, .gitkeep
-├── config/            # konfigurace aplikace a DB
-├── core/              # jádro aplikace – prázdné, .gitkeep
-├── css/               # styly
+├── admin/               # administrační rozhraní (uživatelé, hráči, zápasy, nastavení)
+│   ├── admin_menu.php   # menu administrace
+│   ├── approve_role.php # schvalování rolí
+│   ├── lineup_edit.php  # editace sestavy
+│   ├── lineup_save.php  # uložení sestavy
+│   ├── match_add.php    # přidání zápasu
+│   ├── match_delete.php # smazání zápasu
+│   ├── match_edit.php   # úprava zápasu
+│   ├── match_list.php   # seznam zápasů
+│   ├── media_upload.php # nahrávání médií
+│   ├── news.php         # správa novinek
+│   ├── player_add.php   # přidání hráče
+│   ├── player_delete.php# smazání hráče
+│   ├── player_edit.php  # úprava hráče
+│   ├── player_list.php  # seznam hráčů
+│   ├── requests.php     # požadavky uživatelů
+│   ├── roster.php       # správa soupisek v adminu
+│   ├── settings.php     # nastavení aplikace
+│   ├── sponsors.php     # správa sponzorů
+│   ├── user_add.php     # přidání uživatele
+│   ├── user_delete.php  # smazání uživatele
+│   ├── user_edit.php    # úprava uživatele
+│   └── user_list.php    # seznam uživatelů
+│
+├── api/                 # API endpointy (budoucí rozšíření) – prázdné, .gitkeep
+├── assets/              # statické soubory (obrázky, fonty, …) – prázdné, .gitkeep
+├── config/              # konfigurace aplikace
+│   ├── config.php       # hlavní konfigurace (ignorováno v gitu)
+│   ├── config.php.example # ukázková konfigurace pro nasazení
+│   ├── uc.php
+│   └── usercreate.php
+├── core/                # jádro aplikace – prázdné, .gitkeep
+│
+├── css/                 # kaskádové styly
 │   ├── body.css
 │   ├── cards.css
 │   ├── footer.css
@@ -84,23 +116,53 @@ Spusť lokální PHP server:
 │   ├── responsive.css
 │   ├── sponsors.css
 │   ├── style.css
-│   ├── backup/        # záložní styly – prázdné, .gitkeep
-│   └── modules/       # CSS moduly – prázdné, .gitkeep
-├── includes/          # společné části webu (header, footer, auth check)
-├── js/                # JavaScript soubory
+│   ├── backup/          # záložní styly – prázdné, .gitkeep
+│   └── modules/         # CSS moduly – prázdné, .gitkeep
+│
+├── includes/            # společné části webu
+│   ├── auth_check.php   # kontrola přihlášení
+│   ├── footer.php       # patička stránky
+│   └── header.php       # hlavička stránky
+│
+├── js/                  # JavaScript
 │   └── main.js
-├── logo/              # loga a favicon
-├── scripts/           # pomocné skripty – prázdné, .gitkeep
-├── uploads/           # nahrané soubory (avatars, sponsors, news, team, …)
-│   ├── avatars/
-│   ├── matches/
+│
+├── logo/                # loga a favicon
+│   ├── favicon.ico
+│   ├── sebranka-lebkoun-01.svg
+│   ├── sebranka-logo-01.svg
+│   └── sebranka-napis-01.svg
+│
+├── old/                 # staré soubory a zálohy (prozatím uchováváno)
+│   ├── about-old.php
+│   ├── index-old.php
+│   ├── main-old.js
+│   ├── style-backup.css
+│   ├── style-cervena.css
+│   ├── style202505302311.css
+│   ├── style20250531.css
+│   ├── styleachjo.css
+│   └── stylexx.css
+│
+├── scripts/             # pomocné skripty – prázdné, .gitkeep
+├── uploads/             # nahrané soubory
+│   ├── avatars/         # uživatelské a hráčské avatary
+│   │   ├── players/
+│   │   └── users/
+│   ├── htaccess/        # bezpečnostní nebo upload pravidla
+│   ├── matches/         # soubory k zápasům
 │   │   └── 0_test/
-│   │       ├── gallery/   # prázdné, .gitkeep
-│   │       └── video/     # prázdné, .gitkeep
-│   └── temp/
-├── old/               # staré soubory a zálohy (dočasně uchováváno)
-├── struktura.txt      # export stromu projektu (původní)
-└── struktura_new.txt  # export stromu projektu (aktuální)
+│   │       ├── gallery/ # galerie zápasu (prázdné, .gitkeep)
+│   │       └── video/   # videa ze zápasu (prázdné, .gitkeep)
+│   ├── news/            # obrázky k novinkám
+│   ├── sponsors/        # loga sponzorů
+│   ├── team/            # týmové materiály
+│   │   ├── misc/
+│   │   └── promo/
+│   └── temp/            # dočasné soubory
+│
+└── struktura.txt        # export stromu projektu (aktuální)
+
 
     ⚠️ Poznámka: .gitkeep soubory jsou používány k uchování prázdných složek v repozitáři.
     Obsah složky uploads/ je verzován pouze částečně (přes .gitignore), aby se do gitu nedostaly nahrané soubory, ale zůstala adresářová struktura.
