@@ -167,15 +167,18 @@ Projekt je rozdělen do následujících složek a souborů:
     ⚠️ Poznámka: .gitkeep soubory jsou používány k uchování prázdných složek v repozitáři.
     Obsah složky uploads/ je verzován pouze částečně (přes .gitignore), aby se do gitu nedostaly nahrané soubory, ale zůstala adresářová struktura.
 
-📖 Konvence
+## 📖 Konvence
 
-    Commit message: používej popisné zprávy (např. Add player edit form, Fix login bug).
+V projektu používáme tyto zásady a konvence:
 
-    Branching: nové funkce vyvíjej v samostatných větvích (např. feature/login, fix/navbar).
+- **Názvy souborů**: malé písmo, podtržítka (`soupiska_match.php`).
+- **PHP**: dodržujeme PSR-12 tam, kde je to možné.
+- **CSS**: modulární členění (`css/modules/`) a jeden hlavní `style.css`.
+- **Commity**: [Conventional Commits](https://www.conventionalcommits.org/) – např. `feat: přidána správa sponzorů`.
+- **Jazyk**: komentáře a dokumentace česky, kód anglicky (funkce, proměnné).
 
-    Code style: drž se PSR-12 standardu pro PHP a jednotného formátu CSS/JS.
 
-📌 TODO / Plán
+## 📌 TODO / Plán
 
 Přidat REST API pro statistiky.
 
@@ -187,7 +190,7 @@ Přidat unit testy (PHPUnit).
 
     Vyřešit optimalizaci obrázků v uploads/.
 
-👥 Autoři
+## 👥 Autoři
 
     Sebranka Praha tým – vývoj a správa.
 
