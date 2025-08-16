@@ -39,8 +39,5 @@ Thumbs.db
 /core/*
 !/core/.gitkeep
 
-# Lokální konfigurace – nesledovat v Gitu
-/config/config.php
-
 # VS Code settings
 .vscode/
