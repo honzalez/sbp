@@ -117,6 +117,28 @@ if ($result && $result->num_rows > 0) {
                 </article>
             </div>
         </section>
+        <section class="container mt-8 grid cols-2">
+  <div class="card">
+    <h2 style="font-size:var(--fs-xl); margin-bottom:var(--sp-4);">Ukázka karty</h2>
+    <p class="mb-4">Základní surface, text a ohraničení.</p>
+    <button class="btn">Primární akce</button>
+    <button class="btn outline" style="margin-left:.5rem;">Sekundární</button>
+    <hr class="hr">
+    <span class="badge win">výhra</span>
+    <span class="badge lose" style="margin-left:.35rem;">prohra</span>
+    <span class="badge next" style="margin-left:.35rem;">další zápas</span>
+  </div>
+  <div class="card">
+    <table class="table">
+      <thead><tr><th>Datum</th><th>Soupeř</th><th>Skóre</th></tr></thead>
+      <tbody>
+        <tr><td>2025-09-01</td><td>HC Rival</td><td>4:2</td></tr>
+        <tr><td>2025-09-08</td><td>HC Tigers</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
     </main>
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
