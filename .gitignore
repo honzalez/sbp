@@ -33,3 +33,10 @@ coverage/
 
 # Uploads (pokud máš veřejné nahrávky)
 public/uploads/
+
+# Ignoruj veškerý obsah uploads
+/uploads/*
+
+# Povolit složky a .gitkeep, aby se struktura držela v repu
+!/uploads/**/
+!/uploads/**/.gitkeep
