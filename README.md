@@ -38,20 +38,22 @@ Projekt je psaný v PHP 8+ s využitím HTML5, CSS3 a MySQL/MariaDB.
    ```bash
    git clone https://github.com/honzalez/sbp.git
    cd sbp
+   ```
+2. Přepni se na pracovní větev (např. structure):
+   ```bash
+   git checkout structure
+   ```
+3. Vytvoř soubor konfigurace databáze:
+   ```bash
+   cp config/config.php.example config/config.php
+   ```
 
-    Přepni se na pracovní větev (např. structure):
+   → uprav podle svých údajů (DB host, user, password).
 
-git checkout structure
-
-Vytvoř soubor konfigurace databáze:
-
-cp config/config.php.example config/config.php
-
-→ uprav podle svých údajů (DB host, user, password).
-
-Spusť lokální PHP server:
-
+4. Spusť lokální PHP server:
+   ```bash
     php -S localhost:8000
+    ```
 
     a otevři http://localhost:8000.
 
@@ -163,7 +165,7 @@ Projekt je rozdělen do následujících složek a souborů:
 │
 └── struktura.txt        # export stromu projektu (aktuální)
 
-
+```
     ⚠️ Poznámka: .gitkeep soubory jsou používány k uchování prázdných složek v repozitáři.
     Obsah složky uploads/ je verzován pouze částečně (přes .gitignore), aby se do gitu nedostaly nahrané soubory, ale zůstala adresářová struktura.
 
