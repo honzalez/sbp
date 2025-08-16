@@ -38,3 +38,6 @@ Thumbs.db
 !/assets/.gitkeep
 /core/*
 !/core/.gitkeep
+
+# Lokální konfigurace – nesledovat v Gitu
+/config/config.php
