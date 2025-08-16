@@ -1,5 +1,15 @@
 # Sebranka Praha – Webová aplikace
 
+## 🚀 Deploy status
+
+- **Staging (`structure`)**  
+  [![Deploy (structure)](https://github.com/honzalez/sbp/actions/workflows/deploy.yml/badge.svg?branch=structure)](https://github.com/honzalez/sbp/actions/workflows/deploy.yml?query=branch:structure)
+
+- **Production (`main`)**  
+  [![Deploy (main)](https://github.com/honzalez/sbp/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/honzalez/sbp/actions/workflows/deploy.yml?query=branch:main)
+
+
+
 Oficiální repozitář webové aplikace hokejového týmu **Sebranka Praha**.  
 Projekt je psaný v PHP 8+ s využitím HTML5, CSS3 a MySQL/MariaDB.
 
