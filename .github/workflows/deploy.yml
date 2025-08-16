@@ -1,0 +1,33 @@
+name: Deploy to Wedos
+
+on:
+  push:
+    branches:
+      - structure
+      - main
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.WEDOS_FTP_SERVER }}
+          username: ${{ secrets.WEDOS_FTP_USERNAME }}
+          password: ${{ secrets.WEDOS_FTP_PASSWORD }}
+          # podle větve určujeme složku na Wedosu
+          server-dir: ${{ github.ref == 'refs/heads/main' && '/www/subdom/sebranka/' || '/www/subdom/sbp/' }}
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/.vscode/**
+            ftp-simple.json
+            struktura*.txt
+            node_modules/**
+            uploads/**
+            *.log
+            *.zip
