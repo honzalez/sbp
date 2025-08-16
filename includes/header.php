@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <title>Sebranka Praha</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/style.css" rel="stylesheet">
-	<!--
+    <link rel="stylesheet" href="/css/base.css?v=1">
+    <link rel="stylesheet" href="/css/style.css?v=1">
+    <link rel="stylesheet" href="/css/menu.css?v=1">
+    <link rel="stylesheet" href="/css/cards.css?v=1">
+    <link rel="stylesheet" href="/css/footer.css?v=1">
+    <link rel="stylesheet" href="/css/responsive.css?v=1">
+<!--
+    <link href="/css/base.css" rel="stylesheet"> 
+    <link href="/css/style.css" rel="stylesheet">	
     <link rel="stylesheet" href="/css/body.css">
     <link rel="stylesheet" href="/css/menu.css">
     <link rel="stylesheet" href="/css/sponsors.css">
     <link rel="stylesheet" href="/css/cards.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/responsive.css"> 
-	-->
+-->
     <link rel="icon" type="image/x-icon" href="logo/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon.png">      
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@400;700&display=swap&subset=latin-ext" rel="stylesheet">

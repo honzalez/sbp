@@ -1,0 +1,127 @@
+/* ===== Reset + base ===== */
+:root {
+  /* Barvy (Sebranka) */
+  --clr-primary: #831a28;     /* vínová (preferovaná) */
+  --clr-primary-2: #841C26;   /* alternativa */
+  --clr-bg: #0f0f12;
+  --clr-surface: #16181d;
+  --clr-text: #e9edf1;
+  --clr-text-dim: #b8c1ce;
+  --clr-border: #2a2e36;
+  --clr-accent-gold: #c8a74a;
+  --clr-accent-silver: #aeb4bd;
+  --clr-accent-bronze: #b87333;
+  --clr-success: #3fbf7f;
+  --clr-danger: #ff5d5d;
+  --clr-warning: #ffb84d;
+
+  /* Typografie */
+  --font-sans: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  --fs-xs: 12px; --fs-sm: 14px; --fs-base: 16px; --fs-md: 18px; --fs-lg: 22px; --fs-xl: 28px; --fs-2xl: 34px;
+
+  /* Mezery & rádiusy */
+  --sp-1: .25rem; --sp-2: .5rem; --sp-3: .75rem; --sp-4: 1rem; --sp-6: 1.5rem; --sp-8: 2rem;
+  --radius-sm: .4rem; --radius-md: .8rem; --radius-lg: 1.2rem;
+
+  /* Stíny */
+  --shadow-1: 0 4px 16px rgba(0,0,0,.25);
+  --shadow-2: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* Prefer-dark výchozí (Krok 2 přidáme i přepínání podle času/uživatele) */
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: dark; }
+}
+
+/* Moderní reset – šetrný */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html:focus-within { scroll-behavior: smooth; }
+html, body { height: 100%; }
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--clr-text);
+  background: radial-gradient(1200px 800px at 20% -10%, #151823 0%, #0f1014 40%, #0c0d11 100%);
+}
+
+/* Odkazy & text */
+a { color: var(--clr-accent-gold); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Utility */
+.container { width: min(1100px, 92%); margin-inline: auto; }
+.grid { display: grid; gap: var(--sp-6); }
+.grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.hidden { display: none !important; }
+.mt-4 { margin-top: var(--sp-4); }
+.mt-8 { margin-top: var(--sp-8); }
+.p-4 { padding: var(--sp-4); }
+
+/* Povrchové prvky */
+.card {
+  background: linear-gradient(180deg, var(--clr-surface), #12141a 80%);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  padding: var(--sp-6);
+}
+
+.hr {
+  height: 1px; background: linear-gradient(90deg, transparent, var(--clr-border), transparent);
+  border: 0; margin: var(--sp-6) 0;
+}
+
+/* Tlačítka */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .6rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--clr-border);
+  background: var(--clr-primary);
+  color: #fff; font-weight: 600;
+  transition: transform .08s ease, filter .2s ease, box-shadow .2s ease;
+  box-shadow: var(--shadow-1);
+}
+.btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn.outline {
+  background: transparent; color: var(--clr-text);
+  border-color: var(--clr-primary);
+}
+
+/* Hlavička / patička (základ) */
+.site-header {
+  background: linear-gradient(180deg, rgba(131,26,40,.2), rgba(0,0,0,0) 90%);
+  border-bottom: 1px solid var(--clr-border);
+}
+.site-nav a { padding: .75rem 1rem; display: inline-block; border-radius: var(--radius-sm); }
+.site-nav a[aria-current="page"], .site-nav a.active { background: rgba(131,26,40,.2); }
+
+/* Tabulky */
+.table {
+  width: 100%; border-collapse: collapse; font-size: var(--fs-sm);
+  background: #12141a; border: 1px solid var(--clr-border); border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.table th, .table td { padding: .75rem 1rem; border-bottom: 1px solid var(--clr-border); }
+.table th { text-align: left; color: var(--clr-text-dim); font-weight: 600; background: #151923; }
+
+/* Form prvky – základ */
+input, select, textarea {
+  width: 100%; padding: .65rem .8rem; color: var(--clr-text);
+  background: #11141a; border: 1px solid var(--clr-border); border-radius: var(--radius-sm);
+}
+input:focus, select:focus, textarea:focus { outline: 2px solid color-mix(in oklab, var(--clr-primary), white 20%); outline-offset: 1px; }
+
+/* Badge (např. stav zápasu) */
+.badge { display: inline-block; padding: .2rem .55rem; border-radius: 999px; font-size: var(--fs-xs); border: 1px solid var(--clr-border); }
+.badge.win { background: color-mix(in oklab, var(--clr-success) 25%, #000); }
+.badge.lose { background: color-mix(in oklab, var(--clr-danger) 25%, #000); }
+.badge.next { background: color-mix(in oklab, var(--clr-warning) 25%, #000); }
+
+/* Responsivita */
+@media (max-width: 880px) { .grid.cols-3 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .grid.cols-2, .grid.cols-3 { grid-template-columns: 1fr; } }
