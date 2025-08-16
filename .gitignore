@@ -41,3 +41,6 @@ Thumbs.db
 
 # Lokální konfigurace – nesledovat v Gitu
 /config/config.php
+
+# VS Code settings
+.vscode/
