@@ -1,14 +1,15 @@
 /* ===== KLUBOVÁ PATIČKA ===== */
 .footer-pro {
-    background: transparent;
-    border-top: 0px;
+    background: #111;                  /* tmavý podklad */
+    border-top: 2px solid #a30000;     /* červená linka – stejná jako v headeru */
     color: #ccc;
-    padding: 10px 0 10px 0;
+    padding: 20px 0 16px 0;
     text-align: center;
-    font-size: 1em;
+    font-size: 0.95em;
     letter-spacing: 1px;
-    margin-top: 38px;
+    margin-top: 40px;
 }
+
 .footer-wrap {
     display: flex;
     flex-direction: row;
@@ -17,32 +18,39 @@
     gap: 18px;
     flex-wrap: wrap;
 }
+
 .footer-logo img {
     vertical-align: middle;
-    filter: drop-shadow(0 2px 8px #a3000044);
-}
-.footer-text {
-    font-family: 'Russo One', Arial, sans-serif;
-    font-size: 1.02em;
-    color: #ccc;
-}
-.footer-text a {
-    color: #a30000;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.17s;
-}
-.footer-text a:hover {
-    color: #fff;
+    filter: drop-shadow(0 2px 8px #a3000044); /* jemný stín loga */
 }
 
+.footer-text {
+    font-family: 'Russo One', Arial, sans-serif;
+    font-size: 1em;
+    color: #ccc;
+}
+
+/* Odkazy v patičce */
+.footer-text a {
+    color: #a30000;       /* vínová */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 8px;       /* rozestupy mezi odkazy */
+    transition: color 0.17s;
+}
+
+.footer-text a:hover {
+    color: #fff;          /* hover = bílá */
+}
+
+/* Responsivita */
 @media (max-width: 600px) {
     .footer-wrap {
         flex-direction: column;
         gap: 7px;
     }
     .footer-pro {
-        font-size: 0.99em;
+        font-size: 0.9em;
         padding: 18px 0 10px 0;
     }
 }
