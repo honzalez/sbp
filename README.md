@@ -100,7 +100,7 @@ struktura.txt - Export stromové struktury
     Další přispěvatelé vítáni
 
 
----
+----
 
 Chceš, abych ti **hned teď** k tomu připravil i **seznam všech PHP souborů, které by bylo dobré přesunout do `/archive`**, aby se to nepletlo?  
 Tím bychom hned začali čistit repozitář.
